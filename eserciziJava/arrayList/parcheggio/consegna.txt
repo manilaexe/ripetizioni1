@@ -1,0 +1,28 @@
+Realizzare un programma Java che permetta di gestire un parcheggio utilizzando i concetti di ereditarietà, polimorfismo, classi astratte, interfacce e ArrayList.
+
+Il programma dovrà prevedere una classe astratta Veicolo, contenente le informazioni comuni a tutti i veicoli, come la targa, la marca e il modello. 
+La classe dovrà mettere a disposizione i metodi getter e setter, un costruttore parametrico completo, un metodo toString() e almeno un metodo astratto che verrà implementato in modo diverso dalle classi derivate.
+
+Dal veicolo dovranno derivare almeno due classi, ad esempio Auto e Moto, ciascuna caratterizzata da almeno un attributo specifico. 
+Ogni classe dovrà implementare il metodo astratto della classe genitore e personalizzare il metodo toString() aggiungendo le proprie informazioni.
+
+Creare inoltre un'interfaccia che rappresenti le operazioni eseguibili da un veicolo all'interno del parcheggio, come ad esempio l'ingresso e l'uscita. 
+Le classi che rappresentano i veicoli dovranno implementare tale interfaccia fornendo un comportamento opportuno per ciascun metodo.
+
+Realizzare quindi una classe Parcheggio che utilizzi un ArrayList per memorizzare tutti i veicoli presenti.
+
+La classe dovrà permettere di:
+
+aggiungere un veicolo al parcheggio;
+cercare un veicolo tramite la targa;
+cercare un veicolo in una determinata posizione dell'ArrayList;
+visualizzare l'elenco completo dei veicoli presenti;
+far eseguire a tutti i veicoli il metodo astratto definito nella classe base;
+contare separatamente quante automobili e quante motociclette sono presenti;
+ottenere una nuova lista contenente soltanto i veicoli che soddisfano una determinata caratteristica (ad esempio tutte le auto elettriche, oppure tutte le moto con cilindrata superiore a un certo valore).
+
+Nel programma principale dovranno essere creati alcuni veicoli di entrambe le tipologie, aggiunti al parcheggio e utilizzati per verificare il corretto funzionamento di tutti i metodi realizzati.
+
+Durante i test si dovrà inoltre mostrare l'utilizzo del polimorfismo, dell'operatore instanceof e del casting, invocando sia i metodi della classe astratta sia quelli specifici delle classi derivate e dell'interfaccia.
+
+L'obiettivo dell'esercizio è progettare una semplice applicazione orientata agli oggetti che faccia uso corretto di classi astratte, ereditarietà, interfacce, ArrayList, polimorfismo, casting e ricerca di oggetti all'interno di una collezione.
