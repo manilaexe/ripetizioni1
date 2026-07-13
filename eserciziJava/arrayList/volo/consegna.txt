@@ -1,0 +1,180 @@
+Realizzare un programma Java per la gestione di una compagnia aerea utilizzando i principali concetti della programmazione orientata agli oggetti: ereditarietà, polimorfismo, classi astratte, interfacce, ArrayList e gestione delle eccezioni.
+
+Il programma dovrà simulare la gestione delle persone presenti all'interno di una compagnia aerea e degli aerei disponibili per i vari voli.
+
+Creare una classe astratta Persona che rappresenti una persona generica presente nel sistema.
+
+La classe dovrà contenere i seguenti attributi:
+
+nome completo;
+età;
+indirizzo email.
+
+Dovranno essere implementati:
+
+un costruttore parametrico completo;
+i metodi getter e setter;
+un metodo toString() che permetta di visualizzare in modo ordinato le informazioni della persona.
+
+Nel costruttore dovranno essere effettuati alcuni controlli sui dati inseriti. In particolare, l'età dovrà essere considerata valida solamente se maggiore di zero. 
+Nel caso venga inserito un valore non valido dovrà essere generata e gestita un'opportuna eccezione personalizzata.
+
+Creare una classe Passeggero che estenda la classe Persona.
+
+Ogni passeggero dovrà avere inoltre:
+
+il numero del documento;
+la classe del biglietto acquistato;
+lo stato del pagamento del biglietto.
+
+La classe dovrà permettere di:
+
+acquistare un biglietto;
+verificare se il passeggero possiede un titolo di viaggio valido;
+stabilire eventuali agevolazioni in base all'età del passeggero.
+
+Il metodo toString() dovrà essere personalizzato aggiungendo le informazioni relative al viaggio.
+
+Nel caso venga tentato l'acquisto di un biglietto con dati non validi (ad esempio classe inesistente o documento mancante) dovrà essere generata una specifica eccezione.
+
+Creare una classe astratta Personale che estenda Persona.
+
+Questa classe rappresenterà tutti i dipendenti della compagnia aerea e dovrà contenere:
+
+matricola del dipendente;
+stipendio base.
+
+Creare inoltre un'interfaccia Operatore contenente i metodi:
+
+timbrare l'ingresso;
+timbrare l'uscita.
+
+Tutti i membri del personale dovranno implementare tale interfaccia.
+
+Creare la classe Pilota, che estende Personale.
+
+Un pilota dovrà avere:
+
+numero di ore di volo effettuate;
+grado professionale.
+
+Il pilota dovrà implementare i metodi dell'interfaccia Operatore, stampando data e ora dell'operazione effettuata.
+
+Dovrà inoltre essere possibile verificare se un pilota possiede un numero sufficiente di ore di volo per poter comandare un determinato aereo.
+
+Nel caso il pilota non abbia esperienza sufficiente dovrà essere generata un'eccezione specifica.
+
+Creare la classe AssistenteDiVolo, che estende Personale.
+
+Ogni assistente dovrà contenere:
+
+numero di voli effettuati;
+lingua principale conosciuta.
+
+Anche questa classe dovrà implementare i metodi dell'interfaccia Operatore.
+
+Creare una classe Aereo che rappresenti un singolo mezzo della compagnia.
+
+Ogni aereo dovrà contenere:
+
+codice identificativo;
+modello;
+numero massimo di persone trasportabili;
+elenco delle persone presenti a bordo.
+
+L'elenco delle persone dovrà essere gestito tramite un:
+
+ArrayList<Persona>
+
+La classe dovrà permettere di:
+
+aggiungere una persona a bordo;
+rimuovere una persona;
+stampare tutte le persone presenti;
+contare il numero di passeggeri;
+contare il numero di membri del personale.
+
+Nel momento in cui si tenta di aggiungere una persona quando l'aereo ha raggiunto la capacità massima dovrà essere generata una eccezione personalizzata, ad esempio AereoPienoException.
+
+Creare una classe CompagniaAerea che permetta di gestire tutti gli aerei disponibili.
+
+La classe dovrà utilizzare:
+
+ArrayList<Aereo>
+
+per memorizzare gli aerei della compagnia.
+
+Dovranno essere implementati metodi per:
+
+aggiungere un nuovo aereo;
+cercare un aereo tramite codice identificativo;
+stampare tutti gli aerei disponibili;
+trovare l'aereo con il maggior numero di passeggeri;
+calcolare il numero totale di passeggeri presenti nella compagnia.
+
+Se viene richiesto un aereo inesistente dovrà essere generata una eccezione personalizzata AereoNonTrovatoException.
+
+Creare un metodo:
+
+public boolean decolla(Aereo aereo)
+
+che permetta ad un aereo di partire solamente se vengono rispettate tutte le condizioni necessarie.
+
+Il decollo sarà consentito solamente se:
+
+è presente almeno un pilota abilitato;
+è presente almeno un assistente di volo;
+tutti i passeggeri possiedono un biglietto valido;
+l'aereo non è vuoto.
+
+Se una delle condizioni non viene rispettata dovrà essere generata una opportuna eccezione oppure restituito un valore negativo.
+
+Creare inoltre un metodo:
+
+public String controlloPasseggeri(Aereo aereo)
+
+che restituisca una statistica relativa ai passeggeri presenti a bordo.
+
+La statistica dovrà indicare:
+
+numero di bambini;
+numero di anziani;
+numero di passeggeri adulti;
+numero di passeggeri senza biglietto.
+Gestione delle eccezioni
+
+Il programma dovrà prevedere la creazione di alcune eccezioni personalizzate, ad esempio:
+
+EtaNonValidaException
+generata quando viene inserita un'età non corretta;
+BigliettoNonValidoException
+generata quando un passeggero tenta di acquistare o utilizzare un biglietto non valido;
+AereoPienoException
+generata quando si tenta di superare il numero massimo di posti disponibili;
+AereoNonTrovatoException
+generata quando viene cercato un aereo inesistente;
+PilotaNonAbilitatoException
+generata quando un pilota non possiede i requisiti necessari.
+
+Le eccezioni dovranno essere gestite tramite blocchi try-catch nel programma principale, mostrando messaggi chiari all'utente.
+
+Programma principale
+
+Creare un programma di test che permetta di verificare il corretto funzionamento del sistema.
+
+Il main dovrà:
+
+Creare diversi passeggeri con età differenti.
+Creare alcuni piloti e assistenti di volo.
+Creare almeno due aerei con caratteristiche differenti.
+Inserire persone all'interno degli aerei.
+Provare ad aggiungere persone oltre la capacità massima per verificare la gestione delle eccezioni.
+Stampare il contenuto degli aerei.
+Cercare persone e aerei tramite i metodi disponibili.
+Effettuare il controllo dei passeggeri.
+Provare il decollo degli aerei in diverse condizioni:
+situazione corretta;
+passeggeri senza biglietto;
+assenza di personale;
+pilota non abilitato.
+Gestire correttamente tutti gli errori tramite le eccezioni previste.
