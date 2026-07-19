@@ -1,0 +1,125 @@
+Realizzare un programma Java per la gestione di una biblioteca utilizzando i concetti di ereditarietà, polimorfismo, classi astratte, interfacce, array e gestione delle eccezioni.
+
+Il programma dovrà simulare il funzionamento di una biblioteca nella quale sono presenti diversi tipi di libri e diversi tipi di utenti.
+
+Creare una classe astratta Persona che rappresenti una persona iscritta alla biblioteca.
+
+La classe dovrà contenere i seguenti attributi:
+
+nome completo;
+età;
+indirizzo e-mail.
+
+Implementare:
+
+un costruttore parametrico completo;
+i metodi getter e setter;
+un metodo toString() che restituisca le informazioni della persona.
+
+Nel costruttore dovrà essere verificata la validità dell'età. Se il valore inserito è minore o uguale a zero dovrà essere lanciata un'opportuna eccezione personalizzata.
+
+Creare la classe Utente che estende Persona.
+
+Ogni utente dovrà possedere:
+
+numero della tessera;
+numero di libri attualmente presi in prestito;
+stato della tessera (attiva o sospesa).
+
+L'utente dovrà poter:
+
+prendere in prestito un libro;
+restituire un libro;
+verificare se può effettuare un nuovo prestito.
+
+Personalizzare il metodo toString() aggiungendo le informazioni relative alla tessera.
+
+Creare una classe astratta Libro.
+
+Ogni libro dovrà contenere:
+
+codice identificativo;
+titolo;
+autore;
+stato del prestito.
+
+La classe dovrà prevedere un metodo astratto che permetta di visualizzare il tipo di libro.
+
+Creare due classi che estendono Libro:
+
+Romanzo;
+Manuale.
+
+Ogni classe dovrà aggiungere almeno un attributo specifico e personalizzare il metodo toString().
+
+Creare un'interfaccia Prestabile contenente i metodi:
+
+presta();
+restituisci().
+
+Le classi derivate da Libro dovranno implementare tale interfaccia.
+
+Creare una classe Biblioteca.
+
+La biblioteca dovrà contenere un array di libri e un array di utenti.
+
+La dimensione degli array verrà scelta tramite costruttore.
+
+La classe dovrà implementare i seguenti metodi:
+
+aggiungere un libro alla biblioteca;
+aggiungere un utente;
+cercare un libro tramite codice identificativo;
+cercare un utente tramite numero di tessera;
+visualizzare tutti i libri presenti;
+visualizzare tutti gli utenti registrati;
+contare quanti libri sono attualmente disponibili;
+contare quanti libri risultano in prestito;
+stampare tutti i romanzi presenti;
+stampare tutti i manuali presenti.
+
+Creare inoltre un metodo:
+
+public void effettuaPrestito(String codiceLibro, String numeroTessera)
+
+che permetta ad un utente di prendere in prestito un libro solamente se:
+
+il libro è disponibile;
+la tessera dell'utente è attiva;
+l'utente non ha superato il numero massimo di prestiti consentiti.
+
+In caso contrario dovrà essere generata un'opportuna eccezione personalizzata.
+
+Creare un metodo:
+
+public void restituzioneLibro(String codiceLibro)
+
+che permetta di restituire un libro aggiornando lo stato del libro e dell'utente.
+
+Gestione delle eccezioni
+
+Il programma dovrà prevedere almeno le seguenti eccezioni personalizzate:
+
+EtaNonValidaException;
+LibroNonDisponibileException;
+LibroNonTrovatoException;
+UtenteNonTrovatoException;
+PrestitoNonConsentitoException.
+
+Le eccezioni dovranno essere opportunamente gestite nel programma principale mediante blocchi try-catch.
+
+Programma principale
+
+Nel main dovranno essere eseguite almeno le seguenti operazioni:
+
+Creare diversi utenti.
+Creare diversi romanzi e manuali.
+Inserire utenti e libri nella biblioteca.
+Stampare tutti i libri presenti.
+Stampare tutti gli utenti registrati.
+Cercare un libro tramite il suo codice identificativo.
+Effettuare alcuni prestiti.
+Provare ad effettuare un prestito non consentito verificando il corretto funzionamento delle eccezioni.
+Restituire alcuni libri.
+Stampare il numero di libri disponibili e il numero di libri in prestito.
+Stampare tutti i romanzi e tutti i manuali presenti nella biblioteca.
