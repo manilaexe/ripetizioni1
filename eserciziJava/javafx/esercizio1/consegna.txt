@@ -1,0 +1,49 @@
+Creare una classe principale Main che avvii una semplice applicazione JavaFX.
+
+L'applicazione dovrà mostrare una finestra contenente:
+
+una scritta iniziale;
+un campo di testo dove l'utente possa inserire il proprio nome;
+un pulsante.
+
+Quando l'utente premerà il pulsante dovrà essere eseguita un'azione che:
+
+legge il testo inserito nel campo;
+modifica la scritta iniziale mostrando un messaggio personalizzato.
+
+Ad esempio, se l'utente inserisce:
+
+Mario
+
+e preme il pulsante, la finestra dovrà mostrare:
+
+Ciao Mario!
+
+L'interfaccia grafica dovrà essere organizzata utilizzando un opportuno layout JavaFX a scelta tra:
+
+VBox;
+HBox;
+GridPane.
+
+Creare inoltre:
+
+un titolo per la finestra;
+una dimensione iniziale della finestra;
+una disposizione ordinata dei componenti.
+Componenti minimi richiesti
+
+Il programma dovrà utilizzare almeno:
+
+una classe che estende Application;
+il metodo start(Stage stage);
+un oggetto Stage;
+una Scene;
+una Label;
+una TextField;
+un Button;
+un evento associato al pulsante tramite setOnAction().
+Programma principale
+
+Nel metodo main dovrà essere avviata l'applicazione JavaFX tramite:
+
+launch(args);
