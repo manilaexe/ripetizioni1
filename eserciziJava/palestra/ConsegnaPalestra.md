@@ -1,0 +1,220 @@
+# Esame di riparazione – Gestione di una palestra
+
+Realizzare un programma Java per la gestione di una piccola **palestra**.
+
+Il programma dovrà permettere di gestire gli iscritti e i corsi disponibili, utilizzando i concetti di **classi, ereditarietà, polimorfismo, classi astratte, interfacce, ArrayList ed eccezioni**.
+
+## 1. Classe astratta `Persona`
+
+Creare una classe astratta `Persona` con i seguenti attributi:
+
+- `String nome`
+- `int eta`
+- `String email`
+
+Implementare:
+
+- costruttore parametrico completo;
+- metodi getter e setter;
+- metodo `toString()`.
+
+L'età deve essere maggiore di 0. In caso contrario deve essere lanciata una `EtaNonValidaException`.
+
+## 2. Classe `Iscritto`
+
+Creare la classe `Iscritto` che estende `Persona`.
+
+Aggiungere:
+
+- `String numeroTessera`
+- `boolean abbonamentoAttivo`
+- `int corsiFrequentati`
+
+Implementare i relativi getter e setter.
+
+Aggiungere i metodi:
+
+```java
+public void iscriviAlCorso();
+public void terminaCorso();
+public boolean puoFrequentare();
+```
+
+Un iscritto può frequentare un corso solamente se il proprio abbonamento è attivo.
+
+Personalizzare `toString()`.
+
+## 3. Classe astratta `Corso`
+
+Creare una classe astratta `Corso` con:
+
+- `String codice`
+- `String nome`
+- `int durata`
+- `int postiMassimi`
+
+e un `ArrayList<Iscritto>` contenente gli iscritti al corso.
+
+Implementare:
+
+- costruttore;
+- getter e setter;
+- metodo `toString()`;
+- metodo astratto:
+
+```java
+public abstract void tipoCorso();
+```
+
+## 4. Classi `SalaPesi` e `CorsoYoga`
+
+Creare due classi che estendono `Corso`.
+
+### `SalaPesi`
+
+Aggiungere:
+
+```java
+int macchinari
+```
+
+### `CorsoYoga`
+
+Aggiungere:
+
+```java
+String livello
+```
+
+Entrambe le classi dovranno implementare `tipoCorso()` e personalizzare `toString()`.
+
+## 5. Interfaccia `Prenotabile`
+
+Creare un'interfaccia `Prenotabile` contenente:
+
+```java
+void prenota(Iscritto iscritto);
+void cancella(Iscritto iscritto);
+```
+
+Le classi `SalaPesi` e `CorsoYoga` dovranno implementare l'interfaccia.
+
+Un corso non può accettare iscritti oltre il numero massimo di posti.
+
+Se il corso è pieno dovrà essere lanciata:
+
+```java
+CorsoPienoException
+```
+
+Se l'iscritto non possiede un abbonamento attivo dovrà essere lanciata:
+
+```java
+AbbonamentoNonValidoException
+```
+
+## 6. Classe `Palestra`
+
+Creare una classe `Palestra` che utilizzi due `ArrayList`:
+
+```java
+ArrayList<Iscritto>
+ArrayList<Corso>
+```
+
+Implementare i seguenti metodi:
+
+```java
+public void aggiungiIscritto(Iscritto iscritto);
+
+public void aggiungiCorso(Corso corso);
+
+public Iscritto cercaIscritto(String numeroTessera)
+        throws IscrittoNonTrovatoException;
+
+public Corso cercaCorso(String codice)
+        throws CorsoNonTrovatoException;
+
+public void stampaIscritti();
+
+public void stampaCorsi();
+
+public int contaIscrittiAttivi();
+
+public int contaPostiDisponibili();
+```
+
+Implementare inoltre:
+
+```java
+public void prenotaCorso(String codiceCorso, String numeroTessera)
+```
+
+Il metodo dovrà:
+
+1. cercare il corso;
+2. cercare l'iscritto;
+3. verificare che l'abbonamento sia attivo;
+4. verificare che ci siano posti disponibili;
+5. aggiungere l'iscritto al corso;
+6. aggiornare il numero di corsi frequentati dall'iscritto.
+
+## 7. Eccezioni
+
+Creare le seguenti eccezioni personalizzate:
+
+- `EtaNonValidaException`
+- `CorsoPienoException`
+- `AbbonamentoNonValidoException`
+- `IscrittoNonTrovatoException`
+- `CorsoNonTrovatoException`
+
+Tutte dovranno estendere `Exception`.
+
+## 8. Classe `Main`
+
+Nel `main` creare una palestra con alcuni iscritti e alcuni corsi.
+
+Creare almeno:
+
+- 4 iscritti;
+- 2 corsi di tipo `SalaPesi`;
+- 2 corsi di tipo `CorsoYoga`.
+
+Effettuare le seguenti operazioni:
+
+1. inserire tutti gli iscritti nella palestra;
+2. inserire tutti i corsi;
+3. stampare gli iscritti;
+4. stampare i corsi;
+5. cercare un iscritto tramite numero di tessera;
+6. cercare un corso tramite codice;
+7. effettuare alcune prenotazioni;
+8. provare a prenotare un corso con un iscritto avente abbonamento disattivato;
+9. provare a prenotare un corso pieno;
+10. provare a cercare un iscritto inesistente;
+11. provare a cercare un corso inesistente;
+12. stampare il numero di iscritti con abbonamento attivo;
+13. stampare i posti disponibili nei vari corsi.
+
+Tutte le eccezioni dovranno essere gestite tramite `try-catch`.
+
+## Obiettivo
+
+Il programma deve dimostrare di saper utilizzare correttamente:
+
+- classi e oggetti;
+- costruttori;
+- incapsulamento;
+- ereditarietà;
+- classi astratte;
+- polimorfismo;
+- interfacce;
+- `ArrayList`;
+- `instanceof`;
+- casting;
+- eccezioni personalizzate;
+- `try-catch`;
+- ricerca e gestione di oggetti all'interno di una collezione.
+
+Il codice dovrà essere suddiviso in classi separate e organizzato in modo chiaro.
