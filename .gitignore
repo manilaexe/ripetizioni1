@@ -1,0 +1,59 @@
+# =========================
+# Dipendenze Node/Javascript
+# =========================
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# =========================
+# File compilati Java
+# =========================
+*.class
+*.jar
+*.war
+*.ear
+
+# =========================
+# Directory di build (Maven/Gradle/Ant)
+# =========================
+target/
+build/
+.gradle/
+bin/
+
+# =========================
+# File di configurazione degli IDE
+# =========================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Visual Studio Code
+.vscode/
+
+# =========================
+# File di sistema
+# =========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# =========================
+# Log e file temporanei
+# =========================
+*.log
+*.tmp
+*.temp
