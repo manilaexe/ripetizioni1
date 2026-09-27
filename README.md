@@ -6,7 +6,7 @@ Benvenuto in questa repository! Questa cartella raccoglie una serie di progetti,
 Questa directory funge da raccoglitore in continua espansione per lo studio e la pratica. Le tracce spaziano da semplici manipolazioni di logica e strutture dati, fino a sistemi di gestione più complessi (simulazioni, interfacce utente, gestione aziendale). L'obiettivo è fornire sfide pratiche per migliorare il problem solving e l'ingegnerizzazione del codice.
 
 ## 🗂️ Struttura dei Contenuti
-Ogni esercizio è accompagnato da un documento di traccia (formattato in Markdown) che ne descrive in modo chiaro e strutturato i requisiti. All'interno di ogni consegna troverai:
+Ogni esercizio è accompagnato da un documento di traccia che ne descrive in modo chiaro e strutturato i requisiti. All'interno di ogni consegna troverai:
 * **Obiettivo generale** del progetto.
 * **Specifiche architetturali** (strutture richieste, gerarchie, entità).
 * **Requisiti logici e funzionalità** da implementare.
