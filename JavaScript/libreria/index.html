@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html lang="it"> 
+<head> <
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+    <title>Ricerca Libri Open Library</title> 
+    
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body> 
+    <h1>Ricerca Libri</h1>
+    
+    <div class="search-container"> <!-- Crea il contenitore bianco per gli input di ricerca -->
+        <input type="text" id="titleInput" placeholder="Titolo del libro"> <!-- Campo di testo per inserire il titolo -->
+        <input type="text" id="authorInput" placeholder="Nome dell'autore"> <!-- Campo di testo per inserire l'autore -->
+        <input type="text" id="subjectInput" placeholder="Argomento (es. magic, history)"> <!-- Campo di testo per inserire l'argomento -->
+        <button onclick="searchBooks()">Cerca</button> <!-- Bottone che avvia la funzione JavaScript al click -->
+    </div> 
+
+    <div id="loader">Caricamento in corso...</div> <!-- Elemento testuale mostrato solo durante il fetching dei dati -->
+    <div id="results"></div> <!-- Contenitore vuoto dove verranno iniettate le schede dei libri tramite JS -->
+
+    <script src="script.js"></script> 
+</body> 
+</html>

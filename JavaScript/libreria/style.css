@@ -1,0 +1,83 @@
+body { /* Seleziona il corpo intero della pagina */
+    font-family: Arial, sans-serif; /* Imposta un font pulito e leggibile */
+    background-color: #f4f4f9; /* Applica uno sfondo grigio chiaro alla pagina */
+    padding: 20px; /* Aggiunge spazio interno attorno ai bordi della pagina */
+} /* Chiude le regole del body */
+
+.search-container { /* Seleziona il contenitore del modulo di ricerca */
+    background: white; /* Imposta lo sfondo bianco per il contenitore */
+    padding: 20px; /* Aggiunge spazio interno per non far attaccare i campi ai bordi */
+    border-radius: 8px; /* Arrotonda gli angoli del contenitore */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Aggiunge una leggera ombra per dare profondità */
+    margin-bottom: 20px; /* Aggiunge spazio sotto il modulo di ricerca */
+    display: flex; /* Utilizza flexbox per allineare gli elementi interni */
+    gap: 10px; /* Inserisce uno spazio di 10 pixel tra i campi di input */
+    flex-wrap: wrap; /* Permette agli elementi di andare a capo su schermi piccoli */
+} /* Chiude le regole del search-container */
+
+input { /* Seleziona tutti i campi di testo */
+    padding: 10px; /* Aggiunge spazio interno ai campi per renderli più grandi */
+    border: 1px solid #ccc; /* Imposta un bordo grigio chiaro */
+    border-radius: 4px; /* Arrotonda leggermente gli angoli dei campi */
+    flex: 1; /* Fa espandere i campi per occupare lo spazio disponibile in modo uguale */
+    min-width: 200px; /* Assicura che i campi non diventino troppo stretti */
+} /* Chiude le regole degli input */
+
+button { /* Seleziona il pulsante di ricerca */
+    padding: 10px 20px; /* Imposta lo spazio interno (verticale e orizzontale) */
+    background-color: #007bff; /* Imposta un colore di sfondo blu */
+    color: white; /* Imposta il testo del pulsante bianco */
+    border: none; /* Rimuove il bordo predefinito */
+    border-radius: 4px; /* Arrotonda gli angoli del pulsante */
+    cursor: pointer; /* Cambia l'icona del mouse in una manina quando ci si passa sopra */
+} /* Chiude le regole base del bottone */
+
+button:hover { /* Seleziona il pulsante quando il mouse ci passa sopra */
+    background-color: #0056b3; /* Scurisce il colore blu per il feedback visivo */
+} /* Chiude le regole hover del bottone */
+
+#results { /* Seleziona il contenitore principale dei risultati */
+    display: grid; /* Utilizza il layout a griglia per le schede */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Crea colonne flessibili che si adattano allo schermo */
+    gap: 20px; /* Imposta la distanza tra le schede a 20 pixel */
+} /* Chiude le regole del contenitore results */
+
+.card { /* Seleziona la singola scheda del libro */
+    background: white; /* Imposta lo sfondo della scheda a bianco */
+    border-radius: 8px; /* Arrotonda gli angoli della scheda */
+    padding: 15px; /* Aggiunge spazio interno tra il contenuto e i bordi della scheda */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Applica una piccola ombra alla scheda */
+    display: flex; /* Usa flexbox all'interno della scheda per affiancare immagine e testo */
+    gap: 15px; /* Aggiunge spazio tra la copertina e le informazioni del testo */
+} /* Chiude le regole della classe card */
+
+.card img { /* Seleziona l'immagine di copertina dentro la scheda */
+    width: 80px; /* Imposta una larghezza fissa per la copertina */
+    height: 120px; /* Imposta un'altezza fissa per la copertina */
+    object-fit: cover; /* Assicura che l'immagine riempia lo spazio senza distorcersi */
+    border-radius: 4px; /* Arrotonda leggermente gli angoli dell'immagine */
+    background-color: #eee; /* Mostra un grigio di sfondo nel caso in cui l'immagine tardi a caricare */
+} /* Chiude le regole dell'immagine */
+
+.card-info { /* Seleziona il contenitore del testo dentro la scheda */
+    display: flex; /* Usa flexbox per incolonnare il testo */
+    flex-direction: column; /* Dispone il titolo e i dettagli verticalmente */
+    flex: 1; /* Fa occupare al testo tutto lo spazio rimanente accanto all'immagine */
+} /* Chiude le regole del contenitore info */
+
+.card-info h3 { /* Seleziona il titolo del libro */
+    margin: 0 0 10px 0; /* Rimuove i margini predefiniti, lasciando solo 10px sotto */
+    font-size: 16px; /* Imposta la dimensione del font del titolo */
+} /* Chiude le regole del titolo h3 */
+
+.card-info p { /* Seleziona i paragrafi con i dettagli del libro */
+    margin: 2px 0; /* Riduce lo spazio tra una riga di dettaglio e l'altra */
+    font-size: 14px; /* Rende il testo dei dettagli leggermente più piccolo */
+    color: #555; /* Imposta un colore grigio scuro per non distrarre dal titolo */
+} /* Chiude le regole dei paragrafi */
+
+#loader { /* Seleziona il messaggio di caricamento */
+    display: none; /* Nasconde il loader di default */
+    font-weight: bold; /* Rende il testo del loader in grassetto */
+    color: #007bff; /* Colora il loader di blu */
+} /* Chiude le regole del loader */
